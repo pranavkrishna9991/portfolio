@@ -420,6 +420,13 @@
     .hero-keys { display: none; }
     .hero-stats { position: relative; right: auto; bottom: auto; flex-direction: row; margin-top: 48px; }
   }
+  @media (max-width: 768px) {
+  body::before { display: none; }
+  .scanlines { display: none; }
+  .grid-bg { display: none; }
+  * { animation-duration: 0.01ms !important; 
+      transition-duration: 0.3s !important; }
+}
 </style>
 </head>
 <body>
