@@ -382,13 +382,6 @@
   }
 
   /* SCANLINE effect */
-  .scanlines {
-    position: fixed; inset: 0; pointer-events: none; z-index: 9000;
-    background: repeating-linear-gradient(
-      0deg, transparent, transparent 2px,
-      rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
-    );
-  }
 
   /* NOISE overlay */
   body::before {
@@ -433,8 +426,7 @@
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-<div class="scanlines"></div>
-<div class="grid-bg"></div>
+
 
 <!-- LOADER -->
 <div id="loader">
