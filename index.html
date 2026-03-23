@@ -31,24 +31,10 @@
     color: var(--text);
     font-family: var(--mono);
     overflow-x: hidden;
-    cursor: none;
+    
   }
 
   /* CUSTOM CURSOR */
-  .cursor {
-    position: fixed; width: 12px; height: 12px;
-    background: var(--accent); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-  }
-  .cursor-ring {
-    position: fixed; width: 36px; height: 36px;
-    border: 1px solid rgba(0,245,196,0.4); border-radius: 50%;
-    pointer-events: none; z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: transform 0.15s, width 0.3s, height 0.3s;
-  }
 
   /* LOADER */
   #loader {
@@ -732,29 +718,7 @@
   });
 
   // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  const animCursor = () => {
-    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(animCursor);
-  };
-  animCursor();
-  document.querySelectorAll('a, button, .skill-card, .focus-card, .about-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.width = '6px'; cursor.style.height = '6px';
-      ring.style.width = '50px'; ring.style.height = '50px';
-      ring.style.borderColor = 'rgba(0,245,196,0.6)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.width = '12px'; cursor.style.height = '12px';
-      ring.style.width = '36px'; ring.style.height = '36px';
-      ring.style.borderColor = 'rgba(0,245,196,0.4)';
-    });
-  });
+
 
   // Nav scroll
   const nav = document.getElementById('nav');
